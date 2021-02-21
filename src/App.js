@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import Nav from "./Nav";
+import List from "./List";
+//Rum, Gin, Vodka, Tequila, Brandy, Cognac, Whiskey
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let selected;
+
+    const handleClick = e => {
+        selected = e.target.textContent;
+    };
+
+    return (
+        <div className="App">
+            <Nav handleClick={handleClick} />
+            {selected && <List name={selected} />}
+        </div>
+    );
 }
 
 export default App;
