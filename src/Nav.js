@@ -1,20 +1,20 @@
 import React from "react";
 import { v4 } from "uuid";
-import ListItem from "./ListItem";
+import { Link } from "react-router-dom";
 
-export default function Nav({ handleClick }) {
-    const drinks = ["Gin", "Rum", "Vodka", "Tequila", "Non_Alcoholic"];
-
+export default function Nav() {
     return (
         <nav>
             <ul>
-                {drinks.map(item => (
-                    <ListItem
-                        name={item}
-                        key={v4()}
-                        handleClick={handleClick}
-                    />
-                ))}
+                <Link to="/">
+                    <li>Home</li>
+                </Link>
+                <Link to="/ingredients">
+                    <li>Ingredients</li>
+                </Link>
+                <Link to="/cocktails">
+                    <li>Cocktails</li>
+                </Link>
             </ul>
         </nav>
     );

@@ -1,21 +1,24 @@
 import { useState } from "react";
 import "./index.css";
 import Nav from "./Nav";
-import List from "./List";
+import Home from "./Home";
+import Cocktails from "./Cocktails";
+import Ingredients from "./Ingredients";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //Rum, Gin, Vodka, Tequila, Brandy, Cognac, Whiskey
 
 function App() {
-    const [baseName, setBaseName] = useState("Gin");
-
-    const handleClick = e => {
-        setBaseName(e.target.textContent);
-    };
-
     return (
-        <div className="App">
-            <Nav handleClick={handleClick} />
-            <List name={baseName} />
-        </div>
+        <Router>
+            <div className="App">
+                <Nav />
+                <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/cocktails" component={Cocktails} />
+                    <Route path="/ingredients" component={Ingredients} />
+                </Switch>
+            </div>
+        </Router>
     );
 }
 
