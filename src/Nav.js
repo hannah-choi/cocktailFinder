@@ -3,7 +3,7 @@ import { v4 } from "uuid";
 import ListItem from "./ListItem";
 
 export default function Nav({ handleClick }) {
-    const drinks = ["Gin", "Rum", "Vodka", "Tequila", "Non-alcohol"];
+    const drinks = ["Gin", "Rum", "Vodka", "Tequila", "Non_Alcoholic"];
 
     return (
         <nav>

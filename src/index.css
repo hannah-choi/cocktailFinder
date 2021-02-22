@@ -5,9 +5,16 @@ body {
     margin: 0;
 }
 
+.App {
+    width: 800px;
+    display: flex;
+    border: 1px solid salmon;
+    height: 600px;
+}
+
 nav {
     width: 200px;
-    height: 100vh;
+    height: 100%;
     background-color: gray;
 }
 
@@ -16,4 +23,12 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+li.drinkItem {
+    width: 100px;
+}
+
+.thumbnail img {
+    width: 100%;
 }
