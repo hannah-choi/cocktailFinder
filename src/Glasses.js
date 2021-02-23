@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { v4 } from "uuid";
 import { Link } from "react-router-dom";
 
-export default function Ingredients() {
-    const [drinkList, setDrinkList] = useState([]);
+export default function Glasses() {
+    const [glassList, setGlassList] = useState([]);
 
     useEffect(() => {
         getData();
@@ -11,10 +11,10 @@ export default function Ingredients() {
 
     async function getData() {
         const res = await fetch(
-            `https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list`
+            `https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list`
         );
         const data = await res.json();
-        setDrinkList(data.drinks.map(item => item.strIngredient1));
+        setGlassList(data.drinks.map(item => item.strGlass));
     }
 
     const getName = name => {
@@ -23,10 +23,10 @@ export default function Ingredients() {
 
     return (
         <>
-            <h1>Cocktails by Ingredient</h1>
+            <h1>Cocktails by glass type</h1>
             <ul className="drinkUl">
-                {drinkList.map(item => (
-                    <Link to={`/ingredients/${getName(item)}`} key={v4()}>
+                {glassList.map(item => (
+                    <Link to={`/glasses/${getName(item)}`} key={v4()}>
                         <li className="ingredient">{item}</li>
                     </Link>
                 ))}

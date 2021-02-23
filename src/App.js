@@ -1,12 +1,12 @@
-import { useState } from "react";
 import "./index.css";
 import Nav from "./Nav";
 import Home from "./Home";
 import Ingredients from "./Ingredients";
 import CocktailIngredients from "./CocktailIngredients";
 import CocktailDetail from "./CocktailDetail";
+import Glasses from "./Glasses";
+import GlassesList from "./GlassesList";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-//Rum, Gin, Vodka, Tequila, Brandy, Cognac, Whiskey
 
 function App() {
     return (
@@ -29,6 +29,13 @@ function App() {
                         <Route
                             path="/ingredients/:item/:id"
                             component={CocktailDetail}
+                        />
+
+                        <Route path="/glasses" exact component={Glasses} />
+                        <Route
+                            path="/glasses/:item"
+                            exact
+                            component={GlassesList}
                         />
                     </Switch>
                 </div>

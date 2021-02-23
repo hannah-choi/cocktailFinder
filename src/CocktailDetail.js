@@ -34,12 +34,10 @@ export default function CocktailIngredients({ match }) {
             setRecipe(
                 ingredientArray.map(recipe =>
                     recipe.amount !== null
-                        ? recipe.amount + " of " + recipe.name + "\n"
+                        ? recipe.amount + " " + recipe.name + "\n"
                         : recipe.name + "\n"
                 )
             );
-
-            console.log(recipe);
         };
 
         getRecipes();
@@ -48,7 +46,7 @@ export default function CocktailIngredients({ match }) {
     return (
         <>
             <div className="detail">
-                <h2>{item.strDrink}</h2>
+                <h1>{item.strDrink}</h1>
                 <h4>
                     {item.strAlcoholic} | {item.strGlass}
                 </h4>
@@ -63,14 +61,12 @@ export default function CocktailIngredients({ match }) {
                         }}
                     ></div>
                     <div className="detailDesc">
-                        <small>
-                            {recipe.map(item => (
-                                <>
-                                    {item}
-                                    <br />
-                                </>
-                            ))}
-                        </small>
+                        {recipe.map(item => (
+                            <small key={v4()}>
+                                {item}
+                                <br />
+                            </small>
+                        ))}
                         <p className="instruction">{item.strInstructions}</p>
                     </div>
                 </div>

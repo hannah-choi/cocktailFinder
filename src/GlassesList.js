@@ -3,7 +3,7 @@ import CocktailListItem from "./CocktailListItem";
 import { Link } from "react-router-dom";
 import { v4 } from "uuid";
 
-export default function CocktailIngredients({ match }) {
+export default function GlassesList({ match }) {
     const [list, setList] = useState([]);
 
     useEffect(() => {
@@ -12,7 +12,7 @@ export default function CocktailIngredients({ match }) {
 
     async function getData() {
         const res = await fetch(
-            `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${match.params.item}`
+            `https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${match.params.item}`
         );
         const data = await res.json();
         setList(data.drinks);
@@ -20,7 +20,7 @@ export default function CocktailIngredients({ match }) {
 
     return (
         <>
-            <h2>Cocktails made of {match.params.item.replace("_", " ")}</h2>
+            <h2>{match.params.item.replace("_", " ")}</h2>
             <ul className="drinkUl">
                 {list.map(item => (
                     <Link to={`/ingredients/:item/${item.idDrink}`} key={v4()}>

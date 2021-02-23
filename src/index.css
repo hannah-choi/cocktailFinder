@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Suez+One&family=Work+Sans&display=swap");
 
 .App {
     width: 800px;
@@ -16,16 +16,24 @@ body {
     width: 100vw;
     padding: 0;
     margin: 0;
-    font-family: "Syne", sans-serif;
+    font-family: "Work Sans", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 nav {
     width: 200px;
     height: 100%;
-    background-color: gray;
     padding: 30px;
 }
 
@@ -40,6 +48,16 @@ div.contents {
     width: 600px;
     overflow-y: scroll;
     padding: 40px;
+}
+
+li.ingredient {
+    border: 1px solid gray;
+    margin: 10px;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 ul.drinkUl {
@@ -70,7 +88,13 @@ li.drinkLi .name {
 h1,
 h2,
 h3,
-h4,
+h4 {
+    font-family: "Suez One", serif;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+
 p {
     padding: 0;
     margin: 0;
